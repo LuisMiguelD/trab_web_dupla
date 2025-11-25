@@ -176,7 +176,3 @@ O sistema implementa:
 ## 📄 Licença
 
 Projeto desenvolvido para fins educacionais - Atividade de CRUD.
-
----
-
-**Observação:** Este projeto foi desenvolvido como atividade acadêmica seguindo os requisitos estabelecidos no documento "Projeto CRUD: Sistema de Gerenciamento".
