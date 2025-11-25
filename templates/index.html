@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Lista de Tarefas</h1>
+
+    <a class="btn btn-adicionar" href="/adicionar">Adicionar nova tarefa</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th>Vencimento</th>
+                <th>Prioridade</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in lista_tarefas %}
+            <tr>
+                <td>{{ t.titulo }}</td>
+                <td>{{ t.descricao }}</td>
+                <td>{{ t.data_vencimento }}</td>
+
+                <td class="prioridade {{ t.prioridade | lower }}">
+                    {{ t.prioridade }}
+                </td>
+
+                <td>{{ t.status }}</td>
+
+                <td>
+                    <a class="btn btn-editar" href="/editar/{{ t.id }}">Editar</a>
+                    <a class="btn btn-excluir" href="/deletar/{{ t.id }}" onclick="return confirm('Tem certeza?')">Excluir</a>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="6" style="text-align: center;">Nenhuma tarefa encontrada.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
