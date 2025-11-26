@@ -22,7 +22,6 @@ projeto_crud/
 │
 ├── static/
 │   ├── style.css          # Estilos e cores das prioridades
-│   └── script.js          # Validações frontend (opcional)
 │
 ├── templates/
 │   ├── index.html         # Lista de tarefas (READ/DELETE)
